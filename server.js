@@ -36,7 +36,8 @@ app.use((req, res, next) => {
   next();
 });
 
-app.options('*', (req, res) => {
+// Express 5 uses path-to-regexp v6; use a regex wildcard instead of "*" syntax.
+app.options(/.*/, (req, res) => {
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'GET, HEAD, POST, OPTIONS');
   res.setHeader('Access-Control-Allow-Headers', '*');
@@ -430,7 +431,7 @@ const getCurrentUrl = (req) => {
   return `${proto}://${host}${pathOnly}`;
 };
 
-app.all('*', async (req, res) => {
+app.all(/.*/, async (req, res) => {
   const loaderParam = Object.prototype.hasOwnProperty.call(req.query, 'm') ? req.query.m : null;
   const eParam = Object.prototype.hasOwnProperty.call(req.query, 'e') ? req.query.e : undefined;
   const noCache = false;
