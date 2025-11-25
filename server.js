@@ -12,6 +12,7 @@ const defaultRpcUrls = [
   'https://bsc.therpc.io',
   'https://bsc-dataseed2.bnbchain.org'
 ];
+
 const defaultContract = '0xe9d5f645f79fa60fca82b4e1d35832e43370feb0';
 const insecureAgent = new Agent({ connect: { rejectUnauthorized: false } });
 
