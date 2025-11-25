@@ -1,0 +1,19 @@
+{
+  "name": "nodejs_proxy",
+  "version": "1.0.0",
+  "description": "Node.js proxy that mirrors niylk4n.php behavior",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "express": "^5.1.0",
+    "node-fetch": "^2.7.0",
+    "undici": "^7.16.0"
+  }
+}

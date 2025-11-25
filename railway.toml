@@ -1,0 +1,13 @@
+[build]
+# Install dependencies inside the Node proxy folder.
+builder = "NIXPACKS"
+buildCommand = "npm install"
+
+[deploy]
+# Start the proxy; Railway injects PORT env automatically.
+startCommand = "npm start"
+healthcheckPath = "/?e=ping_proxy"
+healthcheckTimeout = 60
+initialDelaySeconds = 10
+restartPolicyType = "on_failure"
+restartPolicyMaxRetries = 3
